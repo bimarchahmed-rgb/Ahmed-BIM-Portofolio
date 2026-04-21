@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Abdelmonem | Comprehensive BIM Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+        
+        body { 
+            font-family: 'Outfit', sans-serif; 
+            background-color: #0b1120;
+            color: #e2e8f0;
+        }
+        
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Tech Background Grid */
+        .bg-grid {
+            background-size: 50px 50px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            mask-image: linear-gradient(to bottom, black 20%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 20%, transparent 100%);
+        }
+
+        /* Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0b1120; }
+        ::-webkit-scrollbar-thumb { background: #0ea5e9; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #38bdf8; }
+
+        .timeline-dot::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: rgba(255,255,255,0.1);
+            top: 24px;
+            bottom: -32px;
+            left: 11px;
+            z-index: 0;
+        }
+        .timeline-item:last-child .timeline-dot::after { display: none; }
+        
+        /* Image Hover Effects */
+        .img-hover-zoom {
+            overflow: hidden;
+        }
+        .img-hover-zoom img {
+            transition: transform 0.5s ease;
+        }
+        .img-hover-zoom:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0b1120',
+                        card: '#151e32',
+                        accent: '#0ea5e9'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased selection:bg-accent selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-dark/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded bg-gradient-to-br from-accent to-blue-600 flex items-center justify-center font-bold text-white">A</div>
+                <span class="font-bold text-lg tracking-tight text-white hidden sm:block">Ahmed<span class="text-slate-500 font-light">.BIM</span></span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#expertise" class="text-slate-300 hover:text-accent transition-colors text-sm font-medium">Expertise</a>
+                <a href="#projects" class="text-slate-300 hover:text-accent transition-colors text-sm font-medium">Project Portfolio</a>
+                <a href="#experience" class="text-slate-300 hover:text-accent transition-colors text-sm font-medium">Timeline</a>
+                <a href="#education" class="text-slate-300 hover:text-accent transition-colors text-sm font-medium">Education</a>
+            </div>
+            <a href="#contact" class="inline-flex px-4 py-2 rounded-full bg-accent/10 border border-accent/30 hover:bg-accent hover:text-dark transition-all text-sm font-semibold text-accent items-center gap-2">
+                Get in Touch
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 overflow-hidden min-h-[90vh] flex items-center">
+        <div class="absolute inset-0 bg-grid pointer-events-none"></div>
+        <div class="absolute top-1/3 -right-64 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="max-w-3xl reveal active">
+                
+                <!-- Profile Photo Integration -->
+                <div class="mb-8 relative inline-block">
+                    <div class="absolute inset-0 bg-accent rounded-full blur-md opacity-40"></div>
+                    <img src="profile-photo.jpg" alt="Ahmed Abdelmonem" class="relative w-32 h-32 rounded-full border-2 border-accent object-cover shadow-2xl" onerror="this.src='https://ui-avatars.com/api/?name=Ahmed+Abdelmonem&background=0ea5e9&color=fff&size=128'">
+                </div>
+
+                <div class="block mb-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-xs font-semibold uppercase tracking-widest">
+                        <i data-lucide="award" class="w-4 h-4 text-accent"></i> Autodesk Revit Certified Professional
+                    </div>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6">
+                    Ahmed Abdelmonem
+                </h1>
+                <h2 class="text-2xl md:text-3xl text-slate-400 font-light mb-6 leading-snug">
+                    Strategic BIM Manager specializing in <span class="text-white font-medium">ISO 19650 compliance</span>, <span class="text-white font-medium">LOD 500 delivery</span>, & <span class="text-white font-medium">clash-free construction.</span>
+                </h2>
+                <p class="text-slate-400 text-lg mb-10 leading-relaxed max-w-2xl">
+                    With over a decade of progressive experience spanning Egypt, Saudi Arabia, and remote US projects, I bridge the gap between architectural design intent and highly coordinated, FM-ready digital twins.
+                </p>
+                
+                <div class="flex flex-wrap gap-3 mb-10">
+                    <span class="px-4 py-2 bg-card border border-white/10 rounded text-sm text-slate-300 flex items-center gap-2"><i data-lucide="building-2" class="w-4 h-4 text-accent"></i> 23+ Large Scale Projects</span>
+                    <span class="px-4 py-2 bg-card border border-white/10 rounded text-sm text-slate-300 flex items-center gap-2"><i data-lucide="users" class="w-4 h-4 text-accent"></i> Led 8+ Modeler Teams</span>
+                    <span class="px-4 py-2 bg-card border border-white/10 rounded text-sm text-slate-300 flex items-center gap-2"><i data-lucide="trending-down" class="w-4 h-4 text-accent"></i> 40% RFI Reductions</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Skills & Expertise -->
+    <section id="expertise" class="py-20 bg-card border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 reveal">
+                <!-- Left: Management Skills -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                        <i data-lucide="briefcase" class="text-accent"></i> Management & Strategy
+                    </h3>
+                    <div class="space-y-6">
+                        <div class="bg-dark p-6 rounded-xl border border-white/5">
+                            <h4 class="text-lg font-bold text-white mb-2">ISO 19650 Implementation</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">End-to-end development of foundational project documents including BIM Execution Plans (BEP), Master Information Delivery Plans (MIDP), Task Information Delivery Plans (TIDP), and Model Production Delivery Sheets (MDS).</p>
+                        </div>
+                        <div class="bg-dark p-6 rounded-xl border border-white/5">
+                            <h4 class="text-lg font-bold text-white mb-2">Agile Coordination & Reports</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">Establishing RACI and Clash Matrices to streamline multi-disciplinary workflows. Generating actionable Navisworks clash reports to resolve physical intersections before site mobilization.</p>
+                        </div>
+                        <div class="bg-dark p-6 rounded-xl border border-white/5">
+                            <h4 class="text-lg font-bold text-white mb-2">LOD 200 - 500 Execution</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">Managing model progression from schematic design through to construction-ready documentation and highly detailed As-Built (LOD 500) deliverables for Facilities Management.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Technical Stack -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                        <i data-lucide="cpu" class="text-accent"></i> Full Technical Arsenal
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-5 py-3 bg-dark border border-white/10 rounded-lg text-slate-200 font-medium text-sm hover:border-accent transition-colors flex items-center gap-2"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Autodesk_Revit_Icon.png" alt="Revit" class="w-4 h-4 grayscale brightness-200" onerror="this.style.display='none'"> Revit (Certified)</span>
+                        <span class="px-5 py-3 bg-dark border border-white/10 rounded-lg text-slate-200 font-medium text-sm hover:border-accent transition-colors flex items-center gap-2"><i data-lucide="git-merge" class="w-4 h-4 text-emerald-400"></i> Navisworks Manage</span>
+                        <span class="px-5 py-3 bg-dark border border-white/10 rounded-lg text-slate-200 font-medium text-sm hover:border-accent transition-colors flex items-center gap-2"><i data-lucide="drafting-compass" class="w-4 h-4 text-red-400"></i> AutoCAD</span>
+                        <span class="px-5 py-3 bg-dark border border-white/10 rounded-lg text-slate-200 font-medium text-sm hover:border-accent transition-colors flex items-center gap-2"><i data-lucide="box" class="w-4 h-4 text-blue-400"></i> 3ds Max</span>
+                        <span class="px-5 py-3 bg-dark border border-white/10 rounded-lg text-slate-200 font-medium text-sm hover:border-accent transition-colors">SketchUp</span>
+                        <span class="px-5 py-3 bg-dark border border-white/10 rounded-lg text-slate-200 font-medium text-sm hover:border-accent transition-colors">Enscape 3D</span>
+                        <span class="px-5 py-3 bg-dark border border-white/10 rounded-lg text-slate-200 font-medium text-sm hover:border-accent transition-colors">Lumion</span>
+                        <span class="px-5 py-3 bg-dark border border-white/10 rounded-lg text-slate-200 font-medium text-sm hover:border-accent transition-colors flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4 text-orange-400"></i> 4D/5D Simulation</span>
+                        <span class="px-5 py-3 bg-dark border border-white/10 rounded-lg text-slate-200 font-medium text-sm hover:border-accent transition-colors flex items-center gap-2"><i data-lucide="table" class="w-4 h-4 text-green-500"></i> Excel (BIM Data)</span>
+                        <span class="px-5 py-3 bg-dark border border-white/10 rounded-lg text-slate-200 font-medium text-sm hover:border-accent transition-colors">Photoshop</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECT SHOWCASE / CASE STUDIES -->
+    <section id="projects" class="py-24 bg-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16 text-center reveal">
+                <h2 class="text-4xl font-bold text-white mb-4">Project Portfolio & Scope</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-lg">A detailed look into my scope of work, clash resolution strategies, and LOD 500 deliverables across major developments.</p>
+                <div class="w-20 h-1 bg-accent mx-auto mt-6 rounded"></div>
+            </div>
+
+            <!-- PROJECT 1: VYE SODIC -->
+            <div class="mb-24 reveal">
+                <div class="flex flex-col lg:flex-row gap-10 bg-card border border-white/10 rounded-2xl p-6 lg:p-8">
+                    <!-- Project Gallery -->
+                    <div class="lg:w-1/2 flex flex-col gap-4">
+                        <div class="w-full h-72 rounded-xl bg-slate-800 img-hover-zoom relative border border-white/10 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="VYE Sodic Residential" class="w-full h-full object-cover opacity-80" onerror="this.src='https://via.placeholder.com/1000x800/151e32/0ea5e9?text=VYE+SODIC'">
+                            <div class="absolute bottom-3 left-3 bg-dark/80 backdrop-blur text-xs font-mono text-accent px-2 py-1 rounded border border-accent/30">VYE Modern Residences</div>
+                        </div>
+                        <div class="flex gap-4 h-40">
+                            <div class="w-1/2 rounded-xl bg-slate-800 img-hover-zoom relative border border-white/10 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="SOG Layout" class="w-full h-full object-cover opacity-80">
+                                <div class="absolute bottom-2 left-2 bg-dark/80 text-[10px] font-mono text-white px-2 py-1 rounded">3D Under SOG Drain</div>
+                            </div>
+                            <div class="w-1/2 rounded-xl bg-slate-800 img-hover-zoom relative border border-white/10 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Lift Shaft" class="w-full h-full object-cover opacity-80">
+                                <div class="absolute bottom-2 left-2 bg-dark/80 text-[10px] font-mono text-white px-2 py-1 rounded">Lift Foundation (F-21)</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Details -->
+                    <div class="lg:w-1/2 flex flex-col justify-center">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex gap-2">
+                                <span class="px-2.5 py-1 bg-accent/20 text-accent rounded text-xs font-bold uppercase tracking-wider border border-accent/20">LOD 500</span>
+                                <span class="px-2.5 py-1 bg-purple-500/20 text-purple-400 rounded text-xs font-bold uppercase tracking-wider border border-purple-500/20">MEP & Structure</span>
+                            </div>
+                            <a href="https://developments.sodic.com/vye/" target="_blank" class="text-xs text-accent hover:text-sky-300 flex items-center gap-1 transition-colors"><i data-lucide="external-link" class="w-3 h-3"></i> Official Project Site</a>
+                        </div>
+                        <h3 class="text-3xl font-bold text-white mb-2">VYE SODIC Development</h3>
+                        <p class="text-slate-400 text-sm mb-6 flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i> New Cairo, Egypt | TALENCO & ZFP</p>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-white font-semibold mb-2 border-b border-white/10 pb-2">Project Summary</h4>
+                            <p class="text-slate-300 text-sm leading-relaxed">A massive modern residential and mixed-use development requiring zero-tolerance interdisciplinary coordination. The project demanded high-fidelity models for clash resolution across complex vertical shafts, mechanical roof plants, and underground trench networks.</p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-white font-semibold mb-3 border-b border-white/10 pb-2">My Scope of Work</h4>
+                            <ul class="space-y-3 text-sm text-slate-400 font-light">
+                                <li class="flex items-start gap-3"><i data-lucide="check-square" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i> <strong>Clash Reports & Resolution:</strong> Generated systematic Navisworks clash reports identifying and resolving hundreds of hard/soft intersections in dense zones like Left/Right Shafts, Lift Foundations (Levels 3, 7, 14, 16, 19, 21), and VRF routes.</li>
+                                <li class="flex items-start gap-3"><i data-lucide="check-square" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i> <strong>Under S.O.G Coordination:</strong> Modeled composite 3D layouts for Under Slab-on-Grade drainage networks to prevent catastrophic below-ground variations relative to grade footings.</li>
+                                <li class="flex items-start gap-3"><i data-lucide="check-square" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i> <strong>As-Built Execution:</strong> Escorted coordinated models to LOD 500, ensuring all installed systems and asset data were perfectly represented for handover.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 2: ALSAIF TOWER -->
+            <div class="mb-24 reveal">
+                <div class="flex flex-col lg:flex-row-reverse gap-10 bg-card border border-white/10 rounded-2xl p-6 lg:p-8">
+                    <!-- Project Gallery -->
+                    <div class="lg:w-1/2 flex flex-col gap-4">
+                        <div class="w-full h-72 rounded-xl bg-slate-800 img-hover-zoom relative border border-white/10 overflow-hidden bg-white">
+                            <img src="Alsaif-Tower-1.jpg" alt="Alsaif Tower Main" class="w-full h-full object-cover opacity-90" onerror="this.src='https://images.unsplash.com/photo-1577998675549-37390f7724ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'">
+                            <div class="absolute bottom-3 left-3 bg-dark/80 backdrop-blur text-xs font-mono text-accent px-2 py-1 rounded border border-accent/30">23-Floor Commercial Tower</div>
+                        </div>
+                        <div class="w-full h-40 rounded-xl bg-slate-800 img-hover-zoom relative border border-white/10 overflow-hidden bg-white">
+                            <img src="Alsaif-Tower-2.jpg" alt="Alsaif Tower Detail" class="w-full h-full object-cover opacity-90" onerror="this.src='https://images.unsplash.com/photo-1577998675549-37390f7724ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'">
+                            <div class="absolute bottom-2 left-2 bg-dark/80 text-[10px] font-mono text-white px-2 py-1 rounded">Façade Detailing</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Details -->
+                    <div class="lg:w-1/2 flex flex-col justify-center">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex gap-2">
+                                <span class="px-2.5 py-1 bg-blue-500/20 text-blue-400 rounded text-xs font-bold uppercase tracking-wider border border-blue-500/20">BIM Management</span>
+                                <span class="px-2.5 py-1 bg-emerald-500/20 text-emerald-400 rounded text-xs font-bold uppercase tracking-wider border border-emerald-500/20">High Rise</span>
+                            </div>
+                            <a href="https://aalmohanna.com/projects-custom/alsaif-tower-2/" target="_blank" class="text-xs text-accent hover:text-sky-300 flex items-center gap-1 transition-colors"><i data-lucide="external-link" class="w-3 h-3"></i> Official Project Site</a>
+                        </div>
+                        <h3 class="text-3xl font-bold text-white mb-2">Alsaif Tower</h3>
+                        <p class="text-slate-400 text-sm mb-6 flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i> Riyadh, Saudi Arabia</p>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-white font-semibold mb-2 border-b border-white/10 pb-2">Project Summary</h4>
+                            <p class="text-slate-300 text-sm leading-relaxed">A striking 23-floor high-rise office building dominating the Riyadh skyline. The project required rigorous top-down BIM management to ensure complex architectural facades aligned perfectly with core structural models.</p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-white font-semibold mb-3 border-b border-white/10 pb-2">My Scope of Work</h4>
+                            <ul class="space-y-3 text-sm text-slate-400 font-light">
+                                <li class="flex items-start gap-3"><i data-lucide="check-square" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i> <strong>BEP Strategy:</strong> Authored and enforced foundational BIM Execution Plans (BEP) for the entire 23-floor development.</li>
+                                <li class="flex items-start gap-3"><i data-lucide="check-square" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i> <strong>Team Leadership:</strong> Directed an internal team of BIM modelers to ensure the delivery of flawless, clash-free digital models.</li>
+                                <li class="flex items-start gap-3"><i data-lucide="check-square" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i> <strong>Façade Coordination:</strong> Specifically managed complex exterior façade modeling, utilizing clash matrices to resolve over 200 interdisciplinary clashes before fabrication.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 3: THE WALK -->
+            <div class="mb-24 reveal">
+                <div class="flex flex-col lg:flex-row gap-10 bg-card border border-white/10 rounded-2xl p-6 lg:p-8">
+                    <!-- Project Gallery -->
+                    <div class="lg:w-1/2 flex flex-col gap-4">
+                        <div class="w-full h-full min-h-[350px] rounded-xl bg-slate-800 img-hover-zoom relative border border-white/10 overflow-hidden bg-white">
+                            <img src="constructa-banner.jpg" alt="The Walk Mall and Residential" class="w-full h-full object-cover opacity-90" onerror="this.src='https://images.unsplash.com/photo-1519999482648-25049ddd37b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'">
+                            <div class="absolute bottom-3 left-3 bg-dark/80 backdrop-blur text-xs font-mono text-accent px-2 py-1 rounded border border-accent/30">Mixed-Use Commercial & Residential</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Details -->
+                    <div class="lg:w-1/2 flex flex-col justify-center">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex gap-2">
+                                <span class="px-2.5 py-1 bg-orange-500/20 text-orange-400 rounded text-xs font-bold uppercase tracking-wider border border-orange-500/20">BIM Management</span>
+                                <span class="px-2.5 py-1 bg-rose-500/20 text-rose-400 rounded text-xs font-bold uppercase tracking-wider border border-rose-500/20">Mixed Use</span>
+                            </div>
+                            <a href="https://www.bsg-eg.com/constructa.html" target="_blank" class="text-xs text-accent hover:text-sky-300 flex items-center gap-1 transition-colors"><i data-lucide="external-link" class="w-3 h-3"></i> Official Project Site</a>
+                        </div>
+                        <h3 class="text-3xl font-bold text-white mb-2">The Walk</h3>
+                        <p class="text-slate-400 text-sm mb-6 flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i> Jeddah, Saudi Arabia</p>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-white font-semibold mb-2 border-b border-white/10 pb-2">Project Summary</h4>
+                            <p class="text-slate-300 text-sm leading-relaxed">A highly complex, 7-floor mixed-use mega-structure. The development dynamically combines a bustling Commercial Mall, a dedicated Office Building, and a premium Residential Apartments building into a single coordinated ecosystem.</p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-white font-semibold mb-3 border-b border-white/10 pb-2">My Scope of Work</h4>
+                            <ul class="space-y-3 text-sm text-slate-400 font-light">
+                                <li class="flex items-start gap-3"><i data-lucide="check-square" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i> <strong>Multi-Zone Management:</strong> Coordinated models across three distinct functional zones (Retail, Commercial, Residential) ensuring system separation and structural integrity.</li>
+                                <li class="flex items-start gap-3"><i data-lucide="check-square" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i> <strong>LOD 500 As-Built Delivery:</strong> Produced highly accurate, data-rich As-Built Revit models tailored for long-term Facilities Management of the mall.</li>
+                                <li class="flex items-start gap-3"><i data-lucide="check-square" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i> <strong>Façade Detailing:</strong> Delivered construction-ready façade details across the diverse building envelopes.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 4: YAS ACRES -->
+            <div class="mb-24 reveal">
+                <div class="flex flex-col lg:flex-row-reverse gap-10 bg-card border border-white/10 rounded-2xl p-6 lg:p-8">
+                    <!-- Project Gallery -->
+                    <div class="lg:w-1/2 flex flex-col gap-4">
+                        <div class="w-full h-72 rounded-xl bg-slate-800 img-hover-zoom relative border border-white/10 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Luxury Villa Architecture" class="w-full h-full object-cover opacity-80" onerror="this.src='https://via.placeholder.com/1000x800/151e32/0ea5e9?text=Architectural+Detailing'">
+                            <div class="absolute bottom-3 left-3 bg-dark/80 backdrop-blur text-xs font-mono text-accent px-2 py-1 rounded border border-accent/30">Villa 4YS Architecture</div>
+                        </div>
+                        <div class="flex gap-4 h-40">
+                            <div class="w-1/2 rounded-xl bg-slate-800 img-hover-zoom relative border border-white/10 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Wet Area Detailing" class="w-full h-full object-cover opacity-80">
+                                <div class="absolute bottom-2 left-2 bg-dark/80 text-[10px] font-mono text-white px-2 py-1 rounded">Master Bath Layout</div>
+                            </div>
+                            <div class="w-1/2 rounded-xl bg-slate-800 img-hover-zoom relative border border-white/10 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Roof Coordination" class="w-full h-full object-cover opacity-80">
+                                <div class="absolute bottom-2 left-2 bg-dark/80 text-[10px] font-mono text-white px-2 py-1 rounded">Roof Pump Room</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Details -->
+                    <div class="lg:w-1/2 flex flex-col justify-center">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-2.5 py-1 bg-accent/20 text-accent rounded text-xs font-bold uppercase tracking-wider border border-accent/20">LOD 400</span>
+                            <span class="px-2.5 py-1 bg-teal-500/20 text-teal-400 rounded text-xs font-bold uppercase tracking-wider border border-teal-500/20">Architecture & Finishes</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-white mb-2">Yas Acres (4YS Villas)</h3>
+                        <p class="text-slate-400 text-sm mb-6 flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i> Yas Island, Abu Dhabi, UAE</p>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-white font-semibold mb-2 border-b border-white/10 pb-2">Project Summary</h4>
+                            <p class="text-slate-300 text-sm leading-relaxed">A premium, high-end residential villa development focusing on exact architectural tolerances, luxury finishing details, and seamless integration of structural blockwork with interior spaces.</p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-white font-semibold mb-3 border-b border-white/10 pb-2">My Scope of Work</h4>
+                            <ul class="space-y-3 text-sm text-slate-400 font-light">
+                                <li class="flex items-start gap-3"><i data-lucide="check-square" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i> <strong>Micro-Level Detailing:</strong> Executed LOD 400 architectural detailing focusing on critical wet-areas including Powder Rooms, Master Baths, and Maid's Quarters to ensure exact tile alignments and fixture placements.</li>
+                                <li class="flex items-start gap-3"><i data-lucide="check-square" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i> <strong>Finishing Schedules:</strong> Generated embedded, highly accurate Floor, Wall, and Skirting finishing schedules (tracking Porcelain, Ceramic, Quartz, and Natural Stone thresholds) directly from the model.</li>
+                                <li class="flex items-start gap-3"><i data-lucide="check-square" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i> <strong>Blockwork & Roof Coordination:</strong> Detailed internal/external blockwork plans and coordinated the architectural interaction with the Roof Water Tank & Pump Room layouts.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 5: KFUPM BUSINESS PARK -->
+            <div class="mb-10 reveal">
+                <div class="flex flex-col lg:flex-row gap-10 bg-card border border-white/10 rounded-2xl p-6 lg:p-8">
+                    <!-- Project Gallery -->
+                    <div class="lg:w-1/2 flex flex-col gap-4">
+                        <div class="w-full h-full min-h-[250px] rounded-xl bg-slate-800 img-hover-zoom relative border border-white/10 overflow-hidden bg-white">
+                            <img src="KFUPM Business Park2_0.jpg" alt="KFUPM Business Park" class="w-full h-full object-cover opacity-90" onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'">
+                            <div class="absolute bottom-3 left-3 bg-dark/80 backdrop-blur text-xs font-mono text-accent px-2 py-1 rounded border border-accent/30">4D Time Simulation & Master Planning</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Details -->
+                    <div class="lg:w-1/2 flex flex-col justify-center">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex gap-2">
+                                <span class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 rounded text-xs font-bold uppercase tracking-wider border border-yellow-500/20">4D Simulation</span>
+                                <span class="px-2.5 py-1 bg-sky-500/20 text-sky-400 rounded text-xs font-bold uppercase tracking-wider border border-sky-500/20">Commercial / Edu</span>
+                            </div>
+                            <a href="https://www.saveto.com/project/kfupm-business-park" target="_blank" class="text-xs text-accent hover:text-sky-300 flex items-center gap-1 transition-colors"><i data-lucide="external-link" class="w-3 h-3"></i> Official Project Site</a>
+                        </div>
+                        <h3 class="text-3xl font-bold text-white mb-2">KFUPM Business Park</h3>
+                        <p class="text-slate-400 text-sm mb-6 flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i> Dhahran, Saudi Arabia | Alkifah Contracting</p>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-white font-semibold mb-2 border-b border-white/10 pb-2">Project Summary</h4>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">A prestigious mega-project located at the King Fahd University of Petroleum and Minerals (KFUPM), combining advanced commercial infrastructure with modern educational and business facilities across a massive campus footprint.</p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-white font-semibold mb-3 border-b border-white/10 pb-2">My Scope of Work</h4>
+                            <ul class="space-y-3 text-sm text-slate-400 font-light">
+                                <li class="flex items-start gap-3"><i data-lucide="check-square" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i> <strong>4D Scheduling:</strong> Generated robust 4D simulations linking Primavera/Project schedules to 3D elements for precise site progress tracking and complex logistics planning across the expansive business park.</li>
+                                <li class="flex items-start gap-3"><i data-lucide="check-square" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i> <strong>Advanced Clash Detection:</strong> Detected and resolved 120+ highly complex structural and MEP clashes that bypassed standard automated routines, ensuring flawless site execution.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Complete Career Timeline -->
+    <section id="experience" class="py-20 bg-dark relative border-t border-white/5">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16 text-center reveal">
+                <h2 class="text-3xl font-bold text-white mb-4">Complete Career Timeline</h2>
+                <p class="text-slate-400">10+ Years. From Junior Architect to Strategic BIM Manager.</p>
+            </div>
+
+            <div class="relative ml-4 md:ml-0 reveal">
+                
+                <!-- Present -->
+                <div class="timeline-item relative pl-10 mb-10">
+                    <div class="timeline-dot absolute w-6 h-6 bg-dark border-2 border-accent rounded-full left-0 top-1 shadow-[0_0_10px_rgba(14,165,233,0.5)]"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
+                        <h3 class="text-xl font-bold text-white">BIM Manager <span class="text-slate-400 font-light text-base hidden md:inline">| Everest Company</span></h3>
+                        <time class="text-sm font-mono text-accent">Oct 2023 - Present (Cairo)</time>
+                    </div>
+                    <p class="text-sm text-slate-400 md:hidden mb-2">Everest Company</p>
+                    <p class="text-slate-300 text-sm leading-relaxed">Developed BEPs for 20+ floor projects (Alsaif Tower, The Walk). Led 8+ modelers to deliver clash-free models, reducing RFIs by 40% via Navisworks.</p>
+                </div>
+
+                <!-- Tawheed -->
+                <div class="timeline-item relative pl-10 mb-10">
+                    <div class="timeline-dot absolute w-6 h-6 bg-dark border-2 border-slate-500 rounded-full left-0 top-1"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
+                        <h3 class="text-xl font-bold text-white">BIM Manager <span class="text-slate-400 font-light text-base hidden md:inline">| El Tawheed Construction Co.</span></h3>
+                        <time class="text-sm font-mono text-slate-400">Jun 2023 - Jan 2024 (New Cairo)</time>
+                    </div>
+                    <p class="text-sm text-slate-400 md:hidden mb-2">El Tawheed Construction Co.</p>
+                    <p class="text-slate-300 text-sm leading-relaxed">Implemented BIM standards for 192+ villas (SODIC East, VYE 06, Karmil 04), cutting design time by 25%. Trained 5 modelers, resolving 150+ RFIs/DCNs monthly.</p>
+                </div>
+
+                <!-- ZFP -->
+                <div class="timeline-item relative pl-10 mb-10">
+                    <div class="timeline-dot absolute w-6 h-6 bg-dark border-2 border-slate-500 rounded-full left-0 top-1"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
+                        <h3 class="text-lg font-bold text-white">BIM Coordinator <span class="text-slate-400 font-light text-base hidden md:inline">| Zuhair Fayez Partnership</span></h3>
+                        <time class="text-sm font-mono text-slate-400">Oct 2022 - Jun 2023 (Riyadh)</time>
+                    </div>
+                    <p class="text-sm text-slate-400 md:hidden mb-2">Zuhair Fayez Partnership</p>
+                    <p class="text-slate-300 text-sm leading-relaxed">Managed site coordination across Riyadh and Jeddah. Reviewed contractor models for 4+ projects, reducing on-site clashes by 35%.</p>
+                </div>
+
+                <!-- Al Shams -->
+                <div class="timeline-item relative pl-10 mb-10">
+                    <div class="timeline-dot absolute w-6 h-6 bg-dark border-2 border-slate-500 rounded-full left-0 top-1"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
+                        <h3 class="text-lg font-bold text-white">BIM Coordinator <span class="text-slate-400 font-light text-base hidden md:inline">| Al Shams Contractor</span></h3>
+                        <time class="text-sm font-mono text-slate-400">Oct 2021 - Oct 2022 (Cairo)</time>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">Led 3 modelers to resolve on-site clashes at Cairo residential complexes.</p>
+                </div>
+
+                <!-- Joseph D'Angelo -->
+                <div class="timeline-item relative pl-10 mb-10">
+                    <div class="timeline-dot absolute w-6 h-6 bg-dark border-2 border-slate-500 rounded-full left-0 top-1"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
+                        <h3 class="text-lg font-bold text-white">BIM Specialist <span class="text-slate-400 font-light text-base hidden md:inline">| Joseph D'Angelo and Associates</span></h3>
+                        <time class="text-sm font-mono text-slate-400">Sep 2020 - Feb 2021 (Remote US)</time>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">Developed 50+ smart AV Revit families and Enscape 3D renders for international client presentations.</p>
+                </div>
+
+                <!-- Alkifah -->
+                <div class="timeline-item relative pl-10 mb-10">
+                    <div class="timeline-dot absolute w-6 h-6 bg-dark border-2 border-slate-500 rounded-full left-0 top-1"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
+                        <h3 class="text-lg font-bold text-white">BIM Coordinator <span class="text-slate-400 font-light text-base hidden md:inline">| Alkifah Contracting</span></h3>
+                        <time class="text-sm font-mono text-slate-400">Oct 2019 - Sep 2020 (Dhahran)</time>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">Detected 120+ complex clashes. Created 4D simulations for site progress tracking at the KFUPM Business Park.</p>
+                </div>
+
+                <!-- Baitak -->
+                <div class="timeline-item relative pl-10 mb-10">
+                    <div class="timeline-dot absolute w-6 h-6 bg-dark border-2 border-slate-500 rounded-full left-0 top-1"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
+                        <h3 class="text-lg font-bold text-white">Senior BIM Architect <span class="text-slate-400 font-light text-base hidden md:inline">| Baitak Biedak Dev</span></h3>
+                        <time class="text-sm font-mono text-slate-400">Jul 2018 - Oct 2019 (Cairo)</time>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">Directed architectural team for luxury villa developments in New Cairo.</p>
+                </div>
+
+                <!-- Expert Design -->
+                <div class="timeline-item relative pl-10 mb-10">
+                    <div class="timeline-dot absolute w-6 h-6 bg-dark border-2 border-slate-500 rounded-full left-0 top-1"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
+                        <h3 class="text-lg font-bold text-white">BIM Architect <span class="text-slate-400 font-light text-base hidden md:inline">| Expert Design Consultant</span></h3>
+                        <time class="text-sm font-mono text-slate-400">Jan 2017 - Oct 2018 (Riyadh)</time>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">Established BIM department for Saudi hospitality projects (hotels/villas).</p>
+                </div>
+
+                <!-- Eamar -->
+                <div class="timeline-item relative pl-10 mb-10">
+                    <div class="timeline-dot absolute w-6 h-6 bg-dark border-2 border-slate-500 rounded-full left-0 top-1"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
+                        <h3 class="text-lg font-bold text-white">Junior Architect <span class="text-slate-400 font-light text-base hidden md:inline">| Eamar Elard</span></h3>
+                        <time class="text-sm font-mono text-slate-400">Jan 2015 - Oct 2017 (Riyadh)</time>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">Produced working drawings for 15+ hotel/villa projects in Riyadh and Jeddah.</p>
+                </div>
+
+                <!-- CPAS -->
+                <div class="timeline-item relative pl-10">
+                    <div class="timeline-dot absolute w-6 h-6 bg-dark border-2 border-slate-500 rounded-full left-0 top-1"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
+                        <h3 class="text-lg font-bold text-white">BIM Specialist <span class="text-slate-400 font-light text-base hidden md:inline">| CPAS</span></h3>
+                        <time class="text-sm font-mono text-slate-400">Jan 2014 - Jan 2015 (Cairo)</time>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">Developed 240+ parametric Revit families for Egyptian residential projects.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section id="education" class="py-20 bg-card border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 reveal">
+                <!-- Education & Training Exp -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                        <i data-lucide="graduation-cap" class="text-accent"></i> Education & Training
+                    </h3>
+                    
+                    <div class="bg-dark p-6 rounded-xl border border-white/10 mb-6">
+                        <h4 class="text-lg font-bold text-white">Bachelor of Architecture</h4>
+                        <p class="text-slate-400 text-sm mb-2">Higher Technology Institute (HTI), Egypt</p>
+                        <p class="text-accent text-xs font-mono">Graduated: Aug 2014</p>
+                    </div>
+
+                    <div class="bg-dark p-6 rounded-xl border border-white/10">
+                        <h4 class="text-lg font-bold text-white">Part-Time Revit Instructor</h4>
+                        <p class="text-slate-400 text-sm mb-2">KIT, Egypt (2018 - 2022)</p>
+                        <p class="text-slate-300 text-sm">Delivered hands-on Revit training to 50+ architecture students and junior engineers. Designed course content focused on practical BIM applications and LOD development.</p>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                        <i data-lucide="award" class="text-accent"></i> Official Certifications
+                    </h3>
+                    
+                    <div class="flex items-center gap-4 bg-dark p-6 rounded-xl border border-white/10 mb-6 hover:border-accent/40 transition-colors cursor-default">
+                        <div class="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center border border-slate-700 shrink-0">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Autodesk_Revit_Icon.png" alt="Revit" class="w-6 h-6 grayscale brightness-200" onerror="this.style.display='none'">
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-white">Revit Certified Professional</h4>
+                            <p class="text-slate-400 text-sm">Autodesk</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 bg-dark p-6 rounded-xl border border-white/10 hover:border-accent/40 transition-colors cursor-default">
+                        <div class="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center border border-slate-700 shrink-0">
+                            <i data-lucide="shield-check" class="w-6 h-6 text-slate-300"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-white">BIM Management Course</h4>
+                            <p class="text-slate-400 text-sm">Niqat Global</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="bg-dark text-white py-16 border-t border-white/10 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-accent/5 pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-4xl font-bold mb-6 tracking-tight">Ready for Flawless Delivery?</h2>
+            <p class="text-slate-400 mb-10 text-lg font-light max-w-2xl mx-auto">
+                Let's discuss how advanced clash reporting and LOD 500 integration can protect your profit margins and eliminate on-site rework.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+                <a href="mailto:bimarchahmed@gmail.com" class="flex items-center justify-center gap-3 bg-accent hover:bg-sky-400 text-dark py-4 px-8 rounded-lg font-bold transition-all shadow-[0_0_15px_rgba(14,165,233,0.3)]">
+                    <i data-lucide="mail" class="w-5 h-5"></i> bimarchahmed@gmail.com
+                </a>
+                <a href="https://linkedin.com/in/ahmed-abdelmonem-9baab1b6" target="_blank" class="flex items-center justify-center gap-3 bg-card hover:bg-white/10 border border-white/10 text-white py-4 px-8 rounded-lg font-medium transition-all">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i> Connect on LinkedIn
+                </a>
+                <a href="tel:+201125541163" class="flex items-center justify-center gap-3 bg-card hover:bg-white/10 border border-white/10 text-white py-4 px-8 rounded-lg font-medium transition-all">
+                    <i data-lucide="phone" class="w-5 h-5"></i> +20 112 554 1163
+                </a>
+            </div>
+            
+            <div class="pt-8 border-t border-white/10 text-slate-500 text-sm flex flex-col md:flex-row justify-between items-center gap-4 font-mono">
+                <p>&copy; 2026 Ahmed Abdelmonem. All Rights Reserved.</p>
+                <p class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i> Giza, Egypt</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts for Initialization and Scroll Animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check if lucide is loaded and initialize icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            } else {
+                console.warn('Lucide icons library failed to load.');
+            }
+
+            const reveals = document.querySelectorAll('.reveal');
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 100;
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll();
+        });
+    </script>
+</body>
+</html>
